@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lan="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="prim_algorithm" content="프림 알고리즘 메인">
+  <title>Prim Algorithm</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><a href="file:///C:/Users/USER/Desktop/%EC%A1%B8%EC%97%85%EC%9E%91%ED%92%88/gradutation.html">Algorithm</a></h1>
+      <div class="nav">
+        <ul>
+        <li><a href="file:///C:/Users/USER/Desktop/%EC%A1%B8%EC%97%85%EC%9E%91%ED%92%88/prim%20algorithm.html">원리</a></li>
+        <li><a href="file:///C:/Users/USER/Desktop/%EC%A1%B8%EC%97%85%EC%9E%91%ED%92%88/prim%20algorithm%20example1_1.html">Example_1</a></li>
+        <li><a href="file:///C:/Users/USER/Desktop/%EC%A1%B8%EC%97%85%EC%9E%91%ED%92%88/prim%20algorithm%20example2_1.html">Example_2</a></li>
+        <li><a href="file:///C:/Users/USER/Desktop/%EC%A1%B8%EC%97%85%EC%9E%91%ED%92%88/prim%20algorithm%20example3_1.html">Example_3</a></li>
+        <li><a href="#">Example_4</a></li>
+        <li><a href="#">Example_5</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero">
+      <h2>Prim Algorithm</h2>
+      <p> Prim Algorithm에 대한 설명을 통하여, <br><br> Prim 알고리즘의 원리를 이해합니다.</p>
+    </div>
+  </div>
+<div class="explanation">
+  <h2>"Prim의 MST 알고리즘"</h2>
+  <p>프림 알고리즘은 시작 정점에서부터 출발하여 신장 트리T 집합을 단계적으로 확장해나가는 방법이다.</p>
+  <p>시작 단계에서는 시작 정점 만이 신장 트리T 집합에 포함된다. Prim의 방법은 앞 단계에서 만들어진 신장 트리 집합에,<br>
+    인접한 정점들 중에서 최저 간선으로 연결된 정점을 선택하여 트리를 확장해 나가는 방식이다.</p>
+  <p>이 과정은 트리가 n-1개의 간선을 가질 때까지 계속된다.</p>
+  <img src="prim_algorithm.jpg" height="500" wide width="800" alt="Prim  예제" title="prim 예제_1">
+  <h3><br>" 이제 본격적으로<br>예제 그래프를 가지고 Prime의 방법을 살펴보자! "</h3>
+
+  <p><br>(1) 정점 a에서 출발한다고 하자. 맨 처음에는 신장 트리 집합은 {a}가 된다.</p>
+  <img src="prim_1.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_1">
+  <p>▶정점 a와 인접한 정점 : b, f<br></p>
+  <p>이 상태에서 인접 정점 중에서 최소 간선(a-f : 10)을 선택하면 신장 트리T 집합은 {a, f}가 된다.</p>
+  <p><br><br>(2) 이 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b와 e가 있다.</p>
+  <img src="prim_2.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_2">
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 29)</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : e (가중치 : 27)<br><br></p>
+  <p>간선 (a,b)와 간선(f,e)의 가중치를 비교해보면 (f,e)가 27로서 (a,b)의 29보다 작다.</p>
+  <p>따라서, (f,e)간선이 선택되고 정점 e가 신장 트리T 집합에 포함된다.</p>
+  <p><br><br>(3) 다음 단계에서 신장 트리T 집합은 {a, f, e}가 된다.</p>
+  <img src="prim_3.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_3">
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 29)</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 e와 인접한 정점(이미 포함된 정점은 제외된다) : d (가중치 : 22), g (가중치 : 25)<br><br></p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b, d, g가 있다.</p>
+  <p>간선 (a,b)와 간선 (e,d), 간선 (e, g)의 가중치를 비교해보면 (e,d)가 22로서 (a,b)의 29, (e,g)의 25와 비교해보면 가장 작다.</p>
+  <p>따라서, (e,d)간선이 선택되고 정점 d가 신장 트리T 집합에 포함된다.</p>
+  <p><br><br>(4) 다음 단계에서 신장 트리T 집합은 {a, f, e, d}가 된다.</p>
+  <img src="prim_4.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_4">
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 29)</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 e와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 25)</p>
+  <p>▶정점 d와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 18), c (가중치 : 12)<br><br></p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b, d, g가 있다.</p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b, g, c가 있다.</p>
+  <p>간선 (a,b)와 간선 (e,g), 간선 (d,g), 간선 (d,c)의 가중치를 비교해보면 (d,c)가 12로서 다른 간선의 가중치와 비교해보면 가장 작다.</p>
+  <p>따라서, (d,c)간선이 선택되고 정점 c가 신장 트리 집합에 포함된다.</p>
+  <p><br><br>(5) 다음 단계에서 신장 트리T 집합은 {a, f, e, d, c}가 된다.</p>
+  <img src="prim_5.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_5">
+  <p>다음 단계에서 신장 트리T 집합은 {a, f, e, d}가 된다.</p>
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 29)</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 e와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 25)</p>
+  <p>▶정점 d와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 18)</p>
+  <p>▶정점 c와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 16)<br><br></p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b, g가 있다.</p>
+  <p>간선 (a,b)와 간선 (c,b), 간선 (e, g), 간선 (d,g)의 가중치를 비교해보면 (c,b)가 16로서 다른 간선의 가중치와 비교해보면 가장 작다.</p>
+  <p>따라서, (c,b)간선이 선택되고 정점 b가 신장 트리 집합에 포함된다.</p>
+  <p><br><br>(6) 다음 단계에서 신장 트리T 집합은 {a, f, e, d, c, b}가 된다.</p>
+  <img src="prim_6.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_7">
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 e와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 25)</p>
+  <p>▶정점 d와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 18)</p>
+  <p>▶정점 c와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 b와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 15)<br><br></p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 g가 있다.</p>
+  <p>간선 (b,g)와 간선 (d,g), 간선 (e, g)의 가중치를 비교해보면 (b,g)가 15로서 다른 간선의 가중치와 비교해보면 가장 작다.</p>
+  <p>따라서, (b,g)간선이 선택되고 정점 b가 신장 트리 집합에 포함된다.</p>
+  <p>다음 단계에서 신장 트리T 집합은 {a, f, e, d, c, b, g}가 된다.</p>
+  <img src="prim_7.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_7">
+</div>
+</body>
+</html>
