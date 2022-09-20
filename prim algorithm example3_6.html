@@ -9,17 +9,17 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1><a href="https://github.com/comedu20/graph_algorithm/prim%20algorithm">Prim Algorithm</a></h1>
+      <h1><a href="https://comedu20.github.io/graph_algorithm/prim%20algorithm">Prim Algorithm</a></h1>
       <div class="nav">
         <ul>
-        <li><a href="https://github.com/comedu20/graph_algorithm/prim%20algorithm%20example3_1">시작정점 1번</a></li>
-        <li><a href="https://github.com/comedu20/graph_algorithm/prim%20algorithm%20example3_2">시작정점 2번</a></li>
-        <li><a href="https://github.com/comedu20/graph_algorithm/prim%20algorithm%20example3_3">시작정점 3번</a></li>
-        <li><a href="https://github.com/comedu20/graph_algorithm/prim%20algorithm%20example3_4">시작정점 4번</a></li>
-        <li><a href="https://github.com/comedu20/graph_algorithm/prim%20algorithm%20example3_5">시작정점 5번</a></li>
-        <li><a href="https://github.com/comedu20/graph_algorithm/prim%20algorithm%20example3_6">시작정점 6번</a></li>
-        <li><a href="https://github.com/comedu20/graph_algorithm/prim%20algorithm%20example3_7">시작정점 7번</a></li>
-        <li><a href="https://github.com/comedu20/graph_algorithm/prim%20algorithm%20example3_8">시작정점 8번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/prim%20algorithm%20example3_1">시작정점 1번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/prim%20algorithm%20example3_2">시작정점 2번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/prim%20algorithm%20example3_3">시작정점 3번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/prim%20algorithm%20example3_4">시작정점 4번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/prim%20algorithm%20example3_5">시작정점 5번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/prim%20algorithm%20example3_6">시작정점 6번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/prim%20algorithm%20example3_7">시작정점 7번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/prim%20algorithm%20example3_8">시작정점 8번</a></li>
         </ul>
       </div>
     </div>
@@ -30,14 +30,15 @@
   </div>
 <div class="explanation">
   <h2>"Prim의 MST 알고리즘 예제_3"</h2>
-  <img src="예제1.jpg" height="300" wide width="600" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드1.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
 
   <p><br>예제_3 그래프의 시작정점) 6번</p>
   <h3><br>" 예제_3번 그래프를 Prim알고리즘을 통하여, <br>최소 비용 신장트리를 만드는 과정을 살펴보자 "</h3>
 
   <p><br>(1) 정점 6에서 출발한다고 하자. 맨 처음에는 신장 트리T 집합은 {6}가 된다.</p>
 
-  <img src="프레젠테이션1/슬라이드1.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드2.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드10.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
   <p>▶정점 6과 인접한 정점 : 7, 5, 4, 1<br></p>
   <p>▶정점 6과 인접한 정점과의 간선정보를 힙트리에 삽입한다.</p>
   <p>→ 1번째) 정점  7(정점  6와 연결, 두 정점 사이의 비용 :  4) 삽입</p>
@@ -47,7 +48,8 @@
 
   <p><br><br>(2) 이 상태에서 인접 정점 중에서 최소 간선(6-5 : 2)을 선택하면 신장 트리T 집합에 정점 5가 추가되어, <br>신장 트리T 집합은 {6, 5}이 된다.</p>
   <p>정점 6와 정점 5사이의 비용  2을(를) 추가합니다</p>
-  <img src="프레젠테이션1/슬라이드2.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드3.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드11.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
   <p>▶정점 5와 인접한 정점 : 8, 6, 2<br></p>
   <p>▶정점 5와 인접한 정점과의 간선정보를 힙트리에 삽입한다.</p>
   <p>→ 1번째) 정점  8(정점  5와 연결, 두 정점 사이의 비용 :  4) 삽입</p>
@@ -56,7 +58,8 @@
 
   <p><br><br>(3) 이 상태에서 인접 정점 중에서 최소 간선(6-1 : 2)을 선택하면 신장 트리T 집합에 정점 1이 추가되어, <br>신장 트리T 집합은 {6, 5, 1}이 된다.</p>
   <p>정점 6와 정점 1사이의 비용  2을(를) 추가합니다</p>
-  <img src="프레젠테이션1/슬라이드4.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드4.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드12.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
   <p>▶정점 1과 인접한 정점 : 6, 4, 2<br></p>
   <p>▶정점 1과 인접한 정점과의 간선정보를 힙트리에 삽입한다.</p>
   <p>→ 1번째) 정점  6(정점  1와 연결, 두 정점 사이의 비용 :  2) 삽입</p>
@@ -67,11 +70,13 @@
   <p>정점  6는 이미 트리T에 포함된 정점입니다.<br>▶이미 트리 T에 포함된 정점  6를 최소 힙트리에서 삭제합니다</p>
   <p>→ 정점  6(정점  5와 연결, 두 정점 사이의 비용 :  2) 삭제</p>
   <p>최소 힙트리 재구성합니다.</p>
-  <img src="프레젠테이션1/슬라이드5.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드4.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드13.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
 
   <p><br><br>(4) 이 상태에서 인접 정점 중에서 최소 간선(5-2 : 2)을 선택하면 신장 트리T 집합에 정점 2가 추가되어, <br>신장 트리T 집합은 {6, 5, 1, 2}이 된다.</p>
   <p>정점 5와 정점 2사이의 비용  2을(를) 추가합니다</p>
-  <img src="프레젠테이션1/슬라이드8.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드5.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드14.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
   <p>▶정점 2와 인접한 정점 : 8, 5, 3, 1<br></p>
   <p>▶정점 2와 인접한 정점과의 간선정보를 힙트리에 삽입한다.</p>
   <p>→ 1번째) 정점  8(정점  2와 연결, 두 정점 사이의 비용 :  1) 삽입</p>
@@ -81,7 +86,8 @@
 
   <p><br><br>(5) 이 상태에서 인접 정점 중에서 최소 간선(2-8 : 1)을 선택하면 신장 트리T 집합에 정점 8이 추가되어, <br>신장 트리T 집합은 {6, 5, 1, 2, 8}이 된다.</p>
   <p>정점 2와 정점 8사이의 비용  1을(를) 추가합니다</p>
-  <img src="프레젠테이션1/슬라이드10.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드6.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드15.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
   <p>▶정점 8과 인접한 정점 : 7, 5, 3, 2<br></p>
   <p>▶정점 8과 인접한 정점과의 간선정보를 힙트리에 삽입한다.</p>
   <p>→ 1번째) 정점  7(정점  8와 연결, 두 정점 사이의 비용 :  4) 삽입</p>
@@ -93,29 +99,34 @@
   <p>정점  2는 이미 트리T에 포함된 정점입니다.<br>▶이미 트리 T에 포함된 정점  2를 최소 힙트리에서 삭제합니다</p>
   <p>→ 정점  2(정점  8와 연결, 두 정점 사이의 비용 :  1) 삭제</p>
   <p>최소 힙트리 재구성합니다.</p>
-  <img src="프레젠테이션1/슬라이드5.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드6.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드16.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
 
   <p><br>(5-2)▶정점  5를 heap배열에서 추출합니다.</p>
   <p>정점  5는 이미 트리T에 포함된 정점입니다.<br>▶이미 트리 T에 포함된 정점  5를 최소 힙트리에서 삭제합니다</p>
   <p>→ 정점  5(정점  2와 연결, 두 정점 사이의 비용 :  2) 삭제</p>
   <p>최소 힙트리 재구성합니다.</p>
-  <img src="프레젠테이션1/슬라이드5.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드6.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드17.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
 
   <p><br>(5-3)▶정점  6를 heap배열에서 추출합니다.</p>
   <p>정점  6는 이미 트리T에 포함된 정점입니다.<br>▶이미 트리 T에 포함된 정점  6를 최소 힙트리에서 삭제합니다</p>
   <p>→ 정점  6(정점  1와 연결, 두 정점 사이의 비용 :  2) 삭제</p>
   <p>최소 힙트리 재구성합니다.</p>
-  <img src="프레젠테이션1/슬라이드5.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드6.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드18.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
 
   <p><br>(5-4)▶정점  5를 heap배열에서 추출합니다.</p>
   <p> 정점  5는 이미 트리T에 포함된 정점입니다.<br>▶이미 트리 T에 포함된 정점  5를 최소 힙트리에서 삭제합니다</p>
   <p>→ 정점  5(정점  8와 연결, 두 정점 사이의 비용 :  4) 삭제</p>
   <p>최소 힙트리 재구성합니다.</p>
-  <img src="프레젠테이션1/슬라이드5.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드6.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드19.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
 
   <p><br><br>(6) 이 상태에서 인접 정점 중에서 최소 간선(8-7 : 4)을 선택하면 신장 트리T 집합에 정점 7이 추가되어, <br>신장 트리T 집합은 {6, 5, 1, 2, 8, 7}이 된다.</p>
   <p>정점 8와 정점 7사이의 비용  4을(를) 추가합니다</p>
-  <img src="프레젠테이션1/슬라이드11.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드7.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드20.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
   <p>▶정점 7과 인접한 정점 : 8, 6, 3<br></p>
   <p>▶정점 7과 인접한 정점과의 간선정보를 힙트리에 삽입한다.</p>
   <p>→ 1번째) 정점  8(정점  7와 연결, 두 정점 사이의 비용 :  4) 삽입</p>
@@ -124,7 +135,8 @@
 
   <p><br><br>(7) 이 상태에서 인접 정점 중에서 최소 간선(7-3 : 2)을 선택하면 신장 트리T 집합에 정점 3이 추가되어, <br>신장 트리T 집합은 {6, 5, 1, 2, 8, 7, 3}이 된다.</p>
   <p>정점 7와 정점 3사이의 비용  2을(를) 추가합니다</p>
-  <img src="프레젠테이션1/슬라이드11.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드8.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드21.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
   <p>▶정점 3과 인접한 정점 : 8, 7, 4, 2<br></p>
   <p>▶정점 3과 인접한 정점과의 간선정보를 힙트리에 삽입한다.</p>
   <p>→ 1번째) 정점  8(정점  3와 연결, 두 정점 사이의 비용 :  8) 삽입</p>
@@ -136,11 +148,12 @@
   <p>정점  7는 이미 트리T에 포함된 정점입니다.<br>▶이미 트리 T에 포함된 정점  7를 최소 힙트리에서 삭제합니다</p>
   <p>→ 정점  7(정점  3와 연결, 두 정점 사이의 비용 :  2) 삭제</p>
   <p>최소 힙트리 재구성합니다.</p>
-  <img src="프레젠테이션1/슬라이드5.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드8.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드22.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
 
   <p><br><br>(8) 이 상태에서 인접 정점 중에서 최소 간선(3-4 : 2)을 선택하면 신장 트리T 집합에 정점 4가 추가되어, <br>신장 트리T 집합은 {6, 5, 1, 2, 8, 7, 3, 4}이 된다.</p>
   <p>정점 3와 정점 4사이의 비용  2을(를) 추가합니다</p>
-  <img src="프레젠테이션1/슬라이드11.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_2_1">
+  <img src="예제 3_6번/프리젠테이션3/슬라이드9.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
   <p>▶모든 정점이 트리T에 추가되었습니다.<br></p>
   <p>★프림알고리즘 탐색결과 최소비용 : 15</p>
 
