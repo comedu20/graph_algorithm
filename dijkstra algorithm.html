@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lan="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="dijkstra_algorithm" content="프림 알고리즘 메인">
+  <title>Prim Algorithm</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><a href="https://comedu20.github.io/graph_algorithm/">Algorithm</a></h1>
+      <div class="nav">
+        <ul>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm">원리</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example1_1">예제_1</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example2_1">예제_2</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example3_1">예제_3</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example4_1">예제_4</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example5_1">예제_5</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero">
+      <h2>Dijkstra Algorithm</h2>
+      <p> Dijkstra Algorithm에 대한 설명을 통하여, <br><br> Dijkstra 알고리즘의 원리를 이해합니다.</p>
+    </div>
+  </div>
+<div class="explanation">
+  <h2>"Dijkstra의 최단경로 알고리즘"</h2>
+  <p>Dijkstra의 최단 경로 알고리즘은 네트워크에서 하나의 시작 정점으로부터 모든 다른 정점까지의 최단 경로를 찾는 알고리즘이다.</p>
+  <p>최단경로는 경로의 길이 순으로 구해진다.<br><br>
+    먼저 집합 S를 시작 정점 v로부터의 최단경로가 이미 발견된 정점들의 집합이라고 하자.</p>
+  <p>Dijkstra의 알고리즘에서는 시작 정점에서 집합 S에 있는 정점만을 거쳐서<br> 다른 정점으로 가는 최단 거리를 기록하는 배열이 반드시 있어야 한다.<br>이 1차원 배열을 distance라고 한다.</p>
+  <p>시작 정점을 v라 하면 distance[v]=0이고 다른 정점에 대한 distance 값은 시작정점과 해당 정점 간의 가중치 값이다.<br><br></p>
+
+  <p>가중치는 보통 가중치 인접 행렬에 저장되므로 가중치 인접 행렬은 weight이라 하면 distance[w]=weight[v][w]가 된다.</p>
+  <p>정점 v에서 정점 w로의 직접 간선이 없을 경우에는 무한대의 값을 저장한다.<br>
+    시작단계에서는 아직 최단경로가 발견된 정점이 없으므로 S={v}일 것이다.</p>
+  <p>즉 처음에는 시작정점 v를 제외하고는 최단거리가 알려진 정점이 없다.</p>
+  <p>알고리즘이 진행되면서 최단거리가 발견되는 정점들이 S에 하나씩 추가될 것이다.<br><br></p>
+
+  <p>알고리즘의 각 단계에서 S안에 있지 않은 정점 중에서 가장 distnace값이 작은 정점을 S에 추가한다.</p>
+  <p>그 이유는 다음 그림에서 알아보자. <br>현재 S에 들어있지 않은 정점 중 에서 distance 값이 가장 작은 정점을 u라고 하자.</p>
+  <p>그러면 시작 정점 v에서 w까지의 최단 거리는 경로 ①이 된다. <br>만약 더 짧은 경로, 예를 들어 정점 w를 거쳐서 가는 가상적인 더 짧은 경로가 있다고 가정해보자.</p>
+  <p>그러면 정점 v에서의 정점 u까지의 거리는 정점 v에서 정점 w까지의 거리 ②는 경로 ①보다 항상 길 수 밖에 없다.</p>
+  <p>왜냐하면 현재 distance값이 가장 작은 정점은 u이기 때문이다. 다른 정점은 정점 u까지의 거리보다 항상 더 길것이다.</p>
+  <p>따라서 매 단계에서 집합 S에 속하지 않은 정점 중에서 distance의 값이 가장 작은 정점들을 추가해나가면 <br>시작 정점에서 모든 정점까지의 최단거리를 구할 수 있 다.<br><br></p>
+
+
+  <h3><br>" 이제 본격적으로<br>예제 그래프를 가지고 Dijkstra 알고리즘의 방법을 살펴보자! "</h3>
+
+  <p><br>(1) 정점 a에서 출발한다고 하자. 맨 처음에는 신장 트리 집합은 {a}가 된다.</p>
+  <img src="prim_1.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_1">
+  <p>▶정점 a와 인접한 정점 : b, f<br></p>
+  <p>이 상태에서 인접 정점 중에서 최소 간선(a-f : 10)을 선택하면 신장 트리T 집합은 {a, f}가 된다.</p>
+  <p><br><br>(2) 이 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b와 e가 있다.</p>
+  <img src="prim_2.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_2">
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 29)</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : e (가중치 : 27)<br><br></p>
+  <p>간선 (a,b)와 간선(f,e)의 가중치를 비교해보면 (f,e)가 27로서 (a,b)의 29보다 작다.</p>
+  <p>따라서, (f,e)간선이 선택되고 정점 e가 신장 트리T 집합에 포함된다.</p>
+  <p><br><br>(3) 다음 단계에서 신장 트리T 집합은 {a, f, e}가 된다.</p>
+  <img src="prim_3.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_3">
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 29)</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 e와 인접한 정점(이미 포함된 정점은 제외된다) : d (가중치 : 22), g (가중치 : 25)<br><br></p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b, d, g가 있다.</p>
+  <p>간선 (a,b)와 간선 (e,d), 간선 (e, g)의 가중치를 비교해보면 (e,d)가 22로서 (a,b)의 29, (e,g)의 25와 비교해보면 가장 작다.</p>
+  <p>따라서, (e,d)간선이 선택되고 정점 d가 신장 트리T 집합에 포함된다.</p>
+  <p><br><br>(4) 다음 단계에서 신장 트리T 집합은 {a, f, e, d}가 된다.</p>
+  <img src="prim_4.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_4">
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 29)</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 e와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 25)</p>
+  <p>▶정점 d와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 18), c (가중치 : 12)<br><br></p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b, d, g가 있다.</p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b, g, c가 있다.</p>
+  <p>간선 (a,b)와 간선 (e,g), 간선 (d,g), 간선 (d,c)의 가중치를 비교해보면 (d,c)가 12로서 다른 간선의 가중치와 비교해보면 가장 작다.</p>
+  <p>따라서, (d,c)간선이 선택되고 정점 c가 신장 트리 집합에 포함된다.</p>
+  <p><br><br>(5) 다음 단계에서 신장 트리T 집합은 {a, f, e, d, c}가 된다.</p>
+  <img src="prim_5.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_5">
+  <p>다음 단계에서 신장 트리T 집합은 {a, f, e, d}가 된다.</p>
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 29)</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 e와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 25)</p>
+  <p>▶정점 d와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 18)</p>
+  <p>▶정점 c와 인접한 정점(이미 포함된 정점은 제외된다) : b (가중치 : 16)<br><br></p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 b, g가 있다.</p>
+  <p>간선 (a,b)와 간선 (c,b), 간선 (e, g), 간선 (d,g)의 가중치를 비교해보면 (c,b)가 16로서 다른 간선의 가중치와 비교해보면 가장 작다.</p>
+  <p>따라서, (c,b)간선이 선택되고 정점 b가 신장 트리 집합에 포함된다.</p>
+  <p><br><br>(6) 다음 단계에서 신장 트리T 집합은 {a, f, e, d, c, b}가 된다.</p>
+  <img src="prim_6.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_7">
+  <p>▶정점 a와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 f와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 e와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 25)</p>
+  <p>▶정점 d와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 18)</p>
+  <p>▶정점 c와 인접한 정점(이미 포함된 정점은 제외된다) : -</p>
+  <p>▶정점 b와 인접한 정점(이미 포함된 정점은 제외된다) : g (가중치 : 15)<br><br></p>
+  <p>현재 상태에서 신장 트리T 집합에 인접한 정점을 살펴보면 g가 있다.</p>
+  <p>간선 (b,g)와 간선 (d,g), 간선 (e, g)의 가중치를 비교해보면 (b,g)가 15로서 다른 간선의 가중치와 비교해보면 가장 작다.</p>
+  <p>따라서, (b,g)간선이 선택되고 정점 b가 신장 트리 집합에 포함된다.</p>
+  <p>다음 단계에서 신장 트리T 집합은 {a, f, e, d, c, b, g}가 된다.</p>
+  <img src="prim_7.JPG" height="300" wide width="500" alt="Prim  예제" title="prim 예제_7">
+</div>
+</body>
+</html>
