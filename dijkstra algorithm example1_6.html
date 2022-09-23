@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lan="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Dijkstra_algorithm_example" content="프림 알고리즘 예제_2">
+  <title>Dijkstra Algorithm</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm">Dijkstra Algorithm</a></h1>
+      <div class="nav">
+        <ul>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example1_1">시작정점 1번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example1_2">시작정점 2번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example1_3">시작정점 3번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example1_4">시작정점 4번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example1_5">시작정점 5번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example1_6">시작정점 6번</a></li>
+        <li><a href="https://comedu20.github.io/graph_algorithm/dijkstra%20algorithm%20example1_7">시작정점 7번</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero">
+      <h2>Dijkstra Algorithm 예제_1</h2>
+      <p>Dijkstra Algorithm 예제풀이 과정을 통하여, <br><br> Dijkstra 알고리즘의 원리를 이해합니다.</p>
+    </div>
+  </div>
+<div class="explanation">
+  <h2>"Dijkstra의 최단경로 알고리즘 예제_1"</h2>
+  <img src="예제 1_6번/프리젠테이션2/슬라이드1.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+
+  <p><br>예제_1 그래프의 시작정점) 6번</p>
+  <h3><br>" 예제_1번 그래프를 Dijkstra알고리즘을 통하여, <br> 최단경로를 탐색해봅시다."</h3>
+
+  <p>▶정점 6과 인접한 정점 : 4, 2, 1<br></p>
+  <p>▶정점 6과 연결된 정점들에 대한 거리 탐색<br></p>
+
+  <p><br>(1-1) 정점  4의 거리정보가 등록되었습니다.</p>
+  <p>※ 경로 :  6(시작 정점) ->  4(도착 정점)</p>
+  <p>( 시작 정점~정점  6까지의 기존 거리 정보 ) [  0 ] + ( 정점  6~도착 정점  4 ) [  9 ] = [  9 ]</p>
+
+  <p><br>(1-2) 정점  2의 거리정보가 등록되었습니다.</p>
+  <p>※ 경로 :  6(시작 정점) ->  2(도착 정점)</p>
+  <p>( 시작 정점~정점  6까지의 기존 거리 정보 ) [  0 ] + ( 정점  6~도착 정점  2 ) [  6 ] = [  6 ]</p>
+
+  <p><br>(1-3) 정점  1의 거리정보가 등록되었습니다.</p>
+  <p>※ 경로 :  6(시작 정점) ->  1(도착 정점)</p>
+  <p>( 시작 정점~정점  6까지의 기존 거리 정보 ) [  0 ] + ( 정점  6~도착 정점  1 ) [ 10 ] = [ 10 ]</p>
+
+  <img src="예제 1_6번/프리젠테이션2/슬라이드2.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+
+  <p><br>[ 정점 6과 연결된 정점들에 대한 거리 탐색이 종료되었습니다. ]</p>
+
+  <p>▶정점 2와 인접한 정점 : 4, 2<br></p>
+  <p>▶정점 2와 연결된 정점들에 대한 거리 탐색<br></p>
+
+  <p><br>(2-1) 정점  5의 거리정보가 등록되었습니다.</p>
+  <p>※ 경로 :  6(시작 정점) ->  2 ->  5(도착 정점)</p>
+  <p>( 시작 정점~정점  2까지의 기존 거리 정보 ) [  6 ] + ( 정점  2~도착 정점  5 ) [  2 ] = [  8 ]</p>
+
+  <p><br>(2-2) 정점  3의 거리정보가 등록되었습니다.</p>
+  <p>※ 경로 :  6(시작 정점) ->  2 ->  3(도착 정점)</p>
+  <p>( 시작 정점~정점  2까지의 기존 거리 정보 ) [  6 ] + ( 정점  2~도착 정점  3 ) [  4 ] = [ 10 ]</p>
+
+  <img src="예제 1_6번/프리젠테이션2/슬라이드3.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+
+  <p><br>[ 정점 2와 연결된 정점들에 대한 거리 탐색이 종료되었습니다. ]</p>
+
+  <p>▶정점 5와 인접한 정점 : 7, 4, 2, 1<br></p>
+  <p>▶정점 5와 연결된 정점들에 대한 거리 탐색<br></p>
+
+
+  <p><br>(3-1) 정점  7의 거리정보가 등록되었습니다.</p>
+  <p>※ 경로 :  6(시작 정점) ->  5 ->  7(도착 정점)</p>
+  <p>( 시작 정점~정점  5까지의 기존 거리 정보 ) [  8 ] + ( 정점  5~도착 정점  7 ) [  5 ] = [ 13 ]</p>
+
+ <img src="예제 1_6번/프리젠테이션2/슬라이드4.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+
+  <p><br>[ 정점 5와 연결된 정점들에 대한 거리 탐색이 종료되었습니다. ]</p>
+
+  <p>▶정점 4와 인접한 정점 : 7, 6, 5, 3, 2<br></p>
+  <p>▶정점 4와 연결된 정점들에 대한 거리 탐색<br></p>
+
+  <img src="예제 1_6번/프리젠테이션2/슬라이드5.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+
+  <p><br>[ 정점 4와 연결된 정점들에 대한 거리 탐색이 종료되었습니다. ]</p>
+
+  <p>▶정점 1과 인접한 정점 : 6, 5, 2<br></p>
+  <p>▶정점 1과 연결된 정점들에 대한 거리 탐색<br></p>
+
+  <img src="예제  1_6번/프리젠테이션2/슬라이드6.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+
+  <p><br>[ 정점 1과 연결된 정점들에 대한 거리 탐색이 종료되었습니다. ]</p>
+
+  <p>▶정점 3과 인접한 정점 : 4, 2<br></p>
+  <p>▶정점 3과 연결된 정점들에 대한 거리 탐색<br></p>
+
+  <img src="예제 1_6번/프리젠테이션2/슬라이드7.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+
+  <p><br>[ 정점 3과 연결된 정점들에 대한 거리 탐색이 종료되었습니다. ]</p>
+
+  <p>▶정점 7과 인접한 정점 : 5, 4<br></p>
+  <p>▶정점 7과 연결된 정점들에 대한 거리 탐색<br></p>
+
+  <img src="예제 1_6번/프리젠테이션2/슬라이드8.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+
+  <p><br>[ 정점 7과 연결된 정점들에 대한 거리 탐색이 종료되었습니다. ]</p>
+
+  <p>최종 최단 거리 정보</p>
+
+  <img src="예제 1_6번/프리젠테이션2/슬라이드9.JPG" height="400" wide width="800" alt="Prim  예제" title="prim 예제_1_1">
+
+
+</div>
+</body>
+</html>
